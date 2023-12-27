@@ -39,6 +39,9 @@ dependencies {
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation 'mysql:mysql-connector-java:8.0.33'
 
+    // https://mvnrepository.com/artifact/org.springframework/spring-web-reactive
+    implementation 'org.springframework:spring-web-reactive:5.0.0.M4'
+
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 }
@@ -46,3 +49,4 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
