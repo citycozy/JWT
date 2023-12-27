@@ -32,6 +32,7 @@ public class MemberServiceImpl implements MemberService{
     @Transactional
     @Override
     public JwtToken signIn(String username, String password) {
+
         // username + password 를 기반으로 Authentication 객체 생성
         // 이때 authentication 은 인증 여부를 확인하는 authenticated 값이 false
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
