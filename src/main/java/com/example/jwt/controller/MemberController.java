@@ -1,11 +1,11 @@
 package com.example.jwt.controller;
 
-import com.example.jwt.domain.dto.MemberDto;
-import com.example.jwt.domain.dto.SignInDto;
-import com.example.jwt.domain.dto.SignUpDto;
-import com.example.jwt.domain.entity.JwtToken;
-import com.example.jwt.service.member.MemberService;
-import com.example.jwt.service.member.SecurityUtil;
+import com.example.jwt.model.dto.MemberDto;
+import com.example.jwt.model.dto.SignInDto;
+import com.example.jwt.model.dto.SignUpDto;
+import com.example.jwt.model.entity.JwtToken;
+import com.example.jwt.service.MemberService;
+import com.example.jwt.security.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

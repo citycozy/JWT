@@ -1,11 +1,12 @@
-package com.example.jwt.service.member;
+package com.example.jwt.service;
 
 
 import com.example.jwt.dao.MemberRepository;
-import com.example.jwt.domain.dto.MemberDto;
-import com.example.jwt.domain.dto.SignUpDto;
-import com.example.jwt.domain.entity.JwtToken;
-import com.example.jwt.service.jwt.JwtTokenProvider;
+import com.example.jwt.model.dto.MemberDto;
+import com.example.jwt.model.dto.SignUpDto;
+import com.example.jwt.model.entity.JwtToken;
+import com.example.jwt.model.entity.Member;
+import com.example.jwt.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,10 +33,15 @@ public class MemberServiceImpl implements MemberService{
     @Transactional
     @Override
     public JwtToken signIn(String username, String password) {
+        Member member = memberRepository.getByUsername(username);
+
+        if (!passwordEncoder.matches(password, member.getPassword())) {
+            throw new RuntimeException();
+        }
 
         // username + password 를 기반으로 Authentication 객체 생성
         // 이때 authentication 은 인증 여부를 확인하는 authenticated 값이 false
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, member.getPassword());
 
         // 실제 검증. authenticate() 메서드를 통해 요청된 Member 에 대한 검증 진행
         // authenticate 메서드가 실행될 때 CustomUserDetailsService 에서 만든 loadUserByUsername 메서드 실행

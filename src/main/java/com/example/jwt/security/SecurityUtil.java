@@ -1,4 +1,4 @@
-package com.example.jwt.service.member;
+package com.example.jwt.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

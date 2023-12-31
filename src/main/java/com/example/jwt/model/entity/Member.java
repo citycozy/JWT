@@ -1,4 +1,4 @@
-package com.example.jwt.domain.entity;
+package com.example.jwt.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,7 +1,7 @@
-package com.example.jwt.service.member;
+package com.example.jwt.service;
 
 import com.example.jwt.dao.MemberRepository;
-import com.example.jwt.domain.entity.Member;
+import com.example.jwt.model.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

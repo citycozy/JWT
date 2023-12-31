@@ -1,6 +1,6 @@
-package com.example.jwt.domain.dto;
+package com.example.jwt.model.dto;
 
-import com.example.jwt.domain.entity.Member;
+import com.example.jwt.model.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package com.example.jwt.service.jwt;
+package com.example.jwt.security;
 
-import com.example.jwt.domain.entity.JwtToken;
+import com.example.jwt.model.entity.JwtToken;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
