@@ -5,7 +5,6 @@ import com.example.jwt.model.dto.SignInDto;
 import com.example.jwt.model.dto.SignUpDto;
 import com.example.jwt.model.entity.JwtToken;
 import com.example.jwt.service.MemberService;
-import com.example.jwt.security.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -33,16 +32,9 @@ public class MemberController {
     public JwtToken signIn(@RequestBody SignInDto signInDto) {
         String username = signInDto.getUsername();
         String password = signInDto.getPassword();
-        JwtToken jwtToken = memberService.signIn(username, password);
 
-        log.info("jwtToken accessToken = {}, refreshToken = {}", jwtToken.getAccessToken(), jwtToken.getRefreshToken());
-
-        return jwtToken;
+        return memberService.signIn(username, password);
     }
 
-    @PostMapping("/test")
-    public String test() {
-        return "getUsername success\n" + "username : " + SecurityUtil.getCurrentUsername();
-    }
 }
 

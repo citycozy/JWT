@@ -36,7 +36,7 @@ public class MemberServiceImpl implements MemberService{
         Member member = memberRepository.getByUsername(username);
 
         if (!passwordEncoder.matches(password, member.getPassword())) {
-            throw new RuntimeException();
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
         // username + password 를 기반으로 Authentication 객체 생성
