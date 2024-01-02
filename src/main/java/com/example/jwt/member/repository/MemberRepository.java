@@ -1,6 +1,6 @@
-package com.example.jwt.dao;
+package com.example.jwt.member.repository;
 
-import com.example.jwt.model.entity.Member;
+import com.example.jwt.member.domain.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

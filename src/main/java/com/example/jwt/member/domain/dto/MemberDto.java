@@ -1,6 +1,6 @@
-package com.example.jwt.model.dto;
+package com.example.jwt.member.domain.dto;
 
-import com.example.jwt.model.entity.Member;
+import com.example.jwt.member.domain.entity.Member;
 import lombok.*;
 
 import java.util.ArrayList;

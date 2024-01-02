@@ -1,4 +1,4 @@
-package com.example.jwt.model.entity;
+package com.example.jwt.member.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -42,7 +42,6 @@ public class Member implements UserDetails {
     public String getUsername() {
         return username;
     }
-
 
     @Override
     public boolean isAccountNonExpired() {

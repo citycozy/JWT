@@ -1,12 +1,12 @@
-package com.example.jwt.service;
+package com.example.jwt.member.service;
 
 
-import com.example.jwt.dao.MemberRepository;
-import com.example.jwt.model.dto.MemberDto;
-import com.example.jwt.model.dto.SignUpDto;
-import com.example.jwt.model.entity.JwtToken;
-import com.example.jwt.model.entity.Member;
-import com.example.jwt.security.JwtTokenProvider;
+import com.example.jwt.member.repository.MemberRepository;
+import com.example.jwt.member.domain.dto.MemberDto;
+import com.example.jwt.member.domain.dto.SignUpDto;
+import com.example.jwt.member.domain.entity.JwtToken;
+import com.example.jwt.member.domain.entity.Member;
+import com.example.jwt.member.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

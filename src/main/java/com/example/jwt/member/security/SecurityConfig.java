@@ -1,4 +1,4 @@
-package com.example.jwt.security;
+package com.example.jwt.member.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -30,12 +30,11 @@ public class SecurityConfig {
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests((authorizeRequests) ->
-                                authorizeRequests.requestMatchers("members/test").hasRole("USER")
-                                        // 해당 API 에 대해서는 모든 요청 허용
-                                        .requestMatchers("/members/sign-in").permitAll()
-                                        .requestMatchers("/members/sign-up").permitAll()
-                        // 이 밖에 모든 요청에 대해 인증이 필요
-//                                .anyRequest().authenticated())
+                        authorizeRequests
+                                // 해당 API 에 대해서는 모든 요청 허용
+                                .requestMatchers("/members/sign-in").permitAll()
+                                .requestMatchers("/members/sign-up").permitAll()
+                                .anyRequest().permitAll()
                 )
                 // 직접 구현한 필터를 UsernamePasswordAuthenticationFilter 전 실행
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
